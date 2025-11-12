@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://workplanetjobs.com/sitemap.xml
+
+# Block access to admin areas
+Disallow: /admin/
+Disallow: /api/private/
+
+# Allow crawling of job search and CV creation
+Allow: /api/jobs
+Allow: /cv-creator
+Allow: /recruiter-panel
+
+# Crawl delay for respectful crawling
+Crawl-delay: 1

@@ -1,0 +1,268 @@
+/* Auth.css */
+.auth-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+  overflow-y: auto;
+  padding: 2vw 0;
+}
+
+.auth-modal {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16233e 100%);
+  border-radius: 20px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 450px;
+  border: 2px solid #0ff1ce;
+  box-shadow: 0 0 50px rgba(0, 255, 206, 0.3);
+  position: relative;
+  animation: modalSlideIn 0.3s ease-out;
+  max-height: 98vh;
+  overflow-y: auto;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #0ff1ce;
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.auth-header h2 {
+  color: #0ff1ce;
+  margin: 0 0 0.5rem 0;
+  font-size: 2rem;
+  text-shadow: 0 0 20px #0ff1ce;
+}
+
+.auth-header p {
+  color: #00fff7;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  color: #0ff1ce;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group select {
+  padding: 0.8rem 1rem;
+  border: 2px solid #333;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #0ff1ce;
+  outline: none;
+  box-shadow: 0 0 15px rgba(0, 255, 206, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.form-group input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.error-message {
+  background: rgba(255, 0, 0, 0.1);
+  border: 2px solid #ff4444;
+  color: #ff6666;
+  padding: 0.8rem;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.auth-btn {
+  background: linear-gradient(45deg, #0ff1ce, #00ccaa);
+  color: #000;
+  border: none;
+  padding: 1rem;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 255, 206, 0.3);
+  margin-top: 0.5rem;
+}
+
+.auth-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 255, 206, 0.4);
+}
+
+.auth-btn:active {
+  transform: translateY(0);
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #333;
+}
+
+.auth-footer p {
+  color: #fff;
+  margin: 0 0 1rem 0;
+}
+
+.auth-footer button {
+  background: none;
+  border: none;
+  color: #0ff1ce;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.auth-footer button:hover {
+  color: #00fff7;
+}
+
+.demo-account {
+  background: rgba(0, 255, 206, 0.1);
+  border: 1px solid #0ff1ce;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.demo-account p {
+  margin: 0.3rem 0;
+  font-size: 0.9rem;
+  color: #00fff7;
+}
+
+.demo-account p:first-child {
+  color: #0ff1ce;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .auth-modal {
+    margin: 1rem;
+    padding: 1.5rem;
+    max-height: 96vh;
+    overflow-y: auto;
+  }
+  .auth-overlay {
+    padding: 3vw 0;
+  }
+
+  .auth-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .auth-form {
+    gap: 1rem;
+  }
+
+  .form-group input,
+  .form-group select {
+    padding: 0.7rem;
+  }
+}
+
+/* Plan info styles */
+.plan-info {
+  background: rgba(20, 40, 60, 0.6);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid rgba(0, 255, 206, 0.3);
+  margin-top: 0.5rem;
+}
+
+.plan-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.plan-name {
+  color: #0ff1ce;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.price {
+  color: #00ff88;
+  font-size: 1.4rem;
+  font-weight: bold;
+  background: rgba(0, 255, 136, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: 1px solid #00ff88;
+}
+
+.plan-description {
+  color: #fff;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+  opacity: 0.9;
+}
