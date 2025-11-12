@@ -39,7 +39,7 @@ export default function LandingPage() {
   useEffect(() => {
     console.log('expanded:', expanded);
     console.log('Fetching country ranking...');
-    fetch(`/api/country-ranking?expand=${expanded}`)
+    fetch(`/.netlify/functions/country-ranking?expand=${expanded}`)
       .then(res => {
         console.log('Country ranking response status:', res.status);
         return res.json();
