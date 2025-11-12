@@ -115,7 +115,7 @@ export default function LandingPage() {
         location: normalizePolish(location),
         page: page.toString()
       });
-      const response = await fetch(`/api/jobs?${params}`);
+      const response = await fetch(`/.netlify/functions/jobs?${params}`);
       const data = await response.json();
       if (page === 1) {
         setJobs(data.jobs || []);
